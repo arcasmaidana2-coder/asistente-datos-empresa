@@ -5,6 +5,10 @@ productos = [
     {"nombre": "Vasos takeaway", "stock_actual": 20, "stock_minimo": 12},
 ]
 
+total_productos = len(productos)
+productos_en_alerta = 0
+total_unidades_faltantes = 0
+
 print("REVISIÓN DE STOCK")
 print("-----------------")
 
@@ -14,7 +18,16 @@ for producto in productos:
     stock_minimo = producto["stock_minimo"]
 
     if stock_actual < stock_minimo:
-        unidades_faltantes = stock_minimo - stock_actual
-        print(f"ALERTA: {nombre} está bajo de stock. Faltan {unidades_faltantes} unidades.")
+                unidades_faltantes = stock_minimo - stock_actual
+                productos_en_alerta = productos_en_alerta + 1
+                total_unidades_faltantes = total_unidades_faltantes + unidades_faltantes
+                
+                print(f"ALERTA: {nombre} está bajo de stock. Faltan {unidades_faltantes} unidades.")
     else:
         print(f"OK: {nombre} tiene stock suficiente.")
+
+print("-----------------")
+print("RESUMEN")
+print(f"Productos revisados: {total_productos}")
+print(f"Productos en alerta: {productos_en_alerta}")
+print(f"Unidades faltantes en total: {total_unidades_faltantes}")

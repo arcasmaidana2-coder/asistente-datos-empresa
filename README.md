@@ -65,3 +65,6 @@ El objetivo es traducir esa experiencia práctica a soluciones técnicas simples
 * Crear una API con FastAPI.
 * Preparar el proyecto con Docker.
 * Añadir un asistente de IA que resuma alertas y proponga acciones.
+
+
+También genera un resumen final con el total de productos revisados, productos en alerta y unidades faltantes.
